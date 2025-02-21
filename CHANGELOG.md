@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Fixed
+- hide close/minimize actions on Break window on macOS
+
 ## [1.17.2] - 2025-1-19
 ### Fixed
 - Linux DND detection
