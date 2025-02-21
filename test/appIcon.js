@@ -1,7 +1,5 @@
-const chai = require('chai')
-const AppIcon = require('../app/utils/appIcon')
-
-chai.should()
+import 'chai/register-should'
+import AppIcon from '../app/utils/appIcon'
 
 describe('appIcon', function () {
   it('trayIconFileName works for dark mode on macOS', function () {

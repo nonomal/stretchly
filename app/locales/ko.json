@@ -21,11 +21,14 @@
     "restoreDefaults": "설정 초기화",
     "warning": "모든 설정을 기본값으로 초기화 합니다.",
     "continue": "계속",
-    "cancel": "취소"
+    "cancel": "취소",
+    "syncPreferences": "동기화 환경설정",
+    "contributorPreferences": "기여자 환경설정"
   },
   "break": {
     "title": "쉬는 시간이에요!",
-    "skip": "쉬는 시간 건너뛰기"
+    "skip": "쉬는 시간 건너뛰기",
+    "postpone": "이 휴식 시간 미루기"
   },
   "preferences": {
     "theme": {
@@ -44,7 +47,9 @@
     "nav": {
       "settings": "설정",
       "schedule": "쉬는 시간",
-      "theme": "테마"
+      "theme": "테마",
+      "about": "소개",
+      "heart": "Stretchly 좋아요"
     },
     "title": "Stretchly 설정",
     "settings": {
@@ -56,10 +61,15 @@
       "showIdeas": "쉬는 시간 중에 팁을 보여줍니다",
       "allScreens": "모든 화면에 쉬는 시간 알림을 보여줍니다",
       "monitorDnd": "방해 금지 모드에서도 알림을 보여줍니다",
-      "openAtLogin": "로그인할 때 Stretchly를 자동으로 시작합니다"
+      "openAtLogin": "로그인할 때 Stretchly를 자동으로 시작합니다",
+      "monitorIdleTime": "시스템 유휴 상태 모니터링(시스템이 유휴 상태일 때, 휴식 일시정지)."
     },
     "schedule": {
-      "miniBreaks": "짧은 휴식:"
+      "miniBreaks": "짧은 휴식:",
+      "miniBreaksInfo": "짧은 휴식은 정기적으로 잠깐씩 쉬며 스트레칭하고 휴식을 취할 수 있는 시간을 제공합니다.",
+      "enableMiniBreaks": "짧은 휴식 활성",
+      "breakFor": "휴식 시간:",
+      "every": "매:"
     }
   },
   "utils": {
@@ -69,14 +79,8 @@
     "seconds_other": "{{count}}초",
     "minutes_other": "{{count}}분",
     "hours_other": "{{count}}시간",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) 남았어요",
-    "aboutMinutesRemaining": "약 $t(utils.minutes, {'count': {{minutes}} }) 남았어요",
-    "aboutHoursRemaining": "약 $t(utils.hours, {'count': {{hours}} }) 남았어요",
-    "aboutHoursMinutesRemaining": "약 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) 남았어요",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) 후",
-    "inAboutMinutes": "약 $t(utils.minutes, {'count': {{minutes}} }) 후",
-    "inAboutHours": "약 $t(utils.hours, {'count': {{hours}} }) 후",
-    "inAboutHoursMinutes": "약 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) 후"
+    "remaining": "{{count}} 남았어요",
+    "inAbout": "약 {{count}} 후"
   },
   "process": {
     "newVersionAvailable": "새로운 버전이 나왔어요!"
@@ -91,5 +95,16 @@
     "nextMiniBreak": "다음 Mini Break:",
     "afterMiniBreak_other": "{{count}} Mini Breaks 후",
     "resuming": "다시 시작:"
+  },
+  "miniBreakIdeas": {
+    "abg": {
+      "text": "주먹을 쥐고 손가락이 천장을 향하도록펼치세요(누군가에게 \"Stop\"이라고 말하듯이)."
+    },
+    "abj": {
+      "text": "바르게 서서 늘어나는 느낌이 들 때까지 손으로 머리를 어깨 쪽으로 천천히 기울입니다."
+    },
+    "abk": {
+      "text": "양팔을 옆구리에 붙이고 바로 서세요. 견갑골(날개뼈)을 꽉 쥐듯 모으고 자세를 유지하세요."
+    }
   }
 }

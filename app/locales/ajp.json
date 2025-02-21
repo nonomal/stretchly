@@ -162,7 +162,11 @@
     "showBreaksAsRegularWindowsInfo": "عند التشغيل، سيتم وضع شاشة الإستراحة في المقدمة،ستستطيع وضع شاشة أخرى أمامها.",
     "screenInfo": "عند تشغيل 'إظهار الإستراحات على كل الشاشات '، يمكنك أن تختار أي شاشة تظهر فيها الإستراحات.",
     "currentTimeInBreaks": "الوقت الحالي",
-    "showCurrentTimeInBreaks": "إظهار التوقيت المحلي الحالي في فترة الاستراحة"
+    "showCurrentTimeInBreaks": "إظهار التوقيت المحلي الحالي في فترة الاستراحة",
+    "showTrayIcon": "إظهار أيقونة القائمة",
+    "toShowTrayIcon": "إظهار أيقونة 'سترتشلي' في القائمة",
+    "timeToBreakInTray": "وقت الراحة",
+    "showTimeToBreakInTray": "إظهار وقت الراحة التالية في أيقونة القائمة"
   },
   "utils": {
     "oclock_zero": "{{count}} الساعة",
@@ -201,14 +205,8 @@
     "hours_few": "{{count}} ساعات",
     "hours_many": "{{count}} ساعة",
     "hours_other": "{{count}} ساعة",
-    "inAboutHours": "في حوالي $t(utils.minutes, {'count': {{minutes}} })",
-    "aboutHoursMinutesRemaining": "حوالي $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) المتبقية",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) المتبقية",
-    "inAboutMinutes": "في حوالي $t(utils.minutes, {'count': {{minutes}} })",
-    "aboutMinutesRemaining": "حوالي $t(utils.minutes, {'count': {{minutes}} }) متبقية",
-    "aboutHoursRemaining": "حوالي $t(utils.minutes, {'count': {{minutes}} }) متبقية",
-    "inSeconds": "في $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutHoursMinutes": "في حوالي $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "remaining": "{{count}} متبقية",
+    "inAbout": "في حوالي {{count}}"
   },
   "welcome": {
     "title": "مرحبا بك في Stretchly",
@@ -243,6 +241,18 @@
   "miniBreakIdeas": {
     "aab": {
       "text": ".انظر ببطء إلى اليسار ، ثم اليمين"
+    },
+    "aaa": {
+      "text": "قم تناول كأس ماء"
+    },
+    "aac": {
+      "text": "أنظر إلى الأعلى ببطأ, ثم إلى لأسلف"
+    },
+    "aad": {
+      "text": "أغلق عينيك و خذ أنفاسا عميقة."
+    },
+    "aae": {
+      "text": "أغلق عينيك وإسترخ."
     }
   }
 }

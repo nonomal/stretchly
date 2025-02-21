@@ -83,6 +83,7 @@
       "crystalGlass": "Crystal glass",
       "windChime": "Wind chime",
       "ticToc": "Tic toc",
+      "reverie": "Reverie",
       "menubarIcon": "Menubar icon:",
       "colour": "Colour",
       "monochrome": "Monochrome",
@@ -168,10 +169,14 @@
     "cursor": "Follow cursor",
     "timeToBreakInTray": "Time to break",
     "showTimeToBreakInTray": "Show time to the next break in menubar icon",
+    "showTrayIcon": "Show menubar icon",
+    "toShowTrayIcon": "Show Stretchly icon in menubar",
     "currentTimeInBreaks": "Current time",
     "showCurrentTimeInBreaks": "Show current local time in break window"
   },
   "utils": {
+    "remaining": "{{count}} remaining",
+    "inAbout": "in about {{count}}",
     "none_one": "{{count}}",
     "none_other": "{{count}}",
     "percent_one": "{{count}} percent",
@@ -183,15 +188,7 @@
     "minutes_one": "{{count}} minute",
     "minutes_other": "{{count}} minutes",
     "hours_one": "{{count}} hour",
-    "hours_other": "{{count}} hours",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) remaining",
-    "aboutMinutesRemaining": "About $t(utils.minutes, {'count': {{minutes}} }) remaining",
-    "aboutHoursRemaining": "About $t(utils.hours, {'count': {{hours}} }) remaining",
-    "aboutHoursMinutesRemaining": "About $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) remaining",
-    "inSeconds": "in $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "in about $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "in about $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "in about $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "hours_other": "{{count}} hours"
   },
   "process": {
     "newVersionAvailable": "New version is available!"
@@ -328,6 +325,45 @@
     },
     "abl": {
       "text": "Stand tall with your arms raised along your shoulders. Move hands slightly behind your back, hold for a second and return."
+    },
+    "abm": {
+      "text": "Sit on the edge of your chair, twist your torso to one side and hold for 10-15 seconds. Repeat on the other side."
+    },
+    "abn": {
+      "text": "Stand up and put one foot on a nearby object, like a chair or step stool. Keep your knee bent and hold for 10-15 seconds. Repeat with the other foot."
+    },
+    "abo": {
+      "text": "Stand with your feet shoulder-width apart, lower your body down as if you were sitting back into a chair, then stand back up. Repeat several times."
+    },
+    "abp": {
+      "text": "Stand with your back and hands on a wall, then slowly move your arms up and down as if you were making snow angels."
+    },
+    "abq": {
+      "text": "Stand facing a wall and place your hands on it, then do several push-ups."
+    },
+    "abr": {
+      "text": "Sit on the edge of your chair and extend one leg straight out in front of you, holding for 10-15 seconds. Repeat with the other leg."
+    },
+    "abs": {
+      "text": "Stand facing a wall, put one foot back and the other foot forward, then lean into the wall. Repeat with the other leg."
+    },
+    "abt": {
+      "text": "Hold one arm straight up, then use the other arm to gently push the elbow of the first arm towards your head. Hold for 10-15 seconds. Repeat with the other arm."
+    },
+    "abu": {
+      "text": "Tilt your head to one side, then to the other side, and then gently tilt it forward and backward."
+    },
+    "abv": {
+      "text": "Reach one arm across your chest, hold onto the elbow with the other hand, and gently pull it in towards your chest. Repeat with the other arm."
+    },
+    "abw": {
+      "text": "Stand up, put one foot on a nearby object, like a chair or step stool, and reach down to touch your toes. Repeat with the other leg."
+    },
+    "abx": {
+      "text": "Stand in a doorway and place one arm on each side of the doorway, then gently lean forward until you feel a stretch in your chest."
+    },
+    "aby": {
+      "text": "Sit on the edge of a chair or on the floor, and place the soles of your feet together, gently pressing down with your elbows to stretch your inner thighs."
     }
   },
   "longBreakIdeas": {
@@ -425,10 +461,10 @@
     },
     "aax": {
       "title": "Pulse",
-      "text": " Raise your pulse rate to 120 beats per minute for 20 straight minutes four or five times a week doing anything you enjoy. Regularly raising your heart rate results in improved cardiovascular health."
+      "text": "Raise your pulse rate to 120 beats per minute for 20 straight minutes four or five times a week doing anything you enjoy. Regularly raising your heart rate results in improved cardiovascular health."
     },
     "aay": {
-      "title": "Take the stairs ",
+      "title": "Take the stairs",
       "text": "Studies have shown that stair climbing, which is considered vigorous-intensity physical activity, burns more calories per minute than jogging."
     },
     "aaz": {
@@ -461,11 +497,15 @@
     },
     "abg": {
       "title": "Hand squeezes",
-      "text": "Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process few times."
+      "text": "Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process a few times."
     },
     "abh": {
       "title": "Slow Breathing",
       "text": "Emerging research suggests potential for use of controlled slow breathing techniques as a means of optimising physiological parameters that appear to be associated with health and longevity."
+    },
+    "abi": {
+      "title": "Imaginative visualization",
+      "text": "Close your eyes and imagine yourself in a peaceful and calming place, such as a beach or a forest, focusing on the sights, sounds, and sensations of that environment."
     }
   }
 }

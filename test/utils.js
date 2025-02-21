@@ -1,89 +1,66 @@
-const chai = require('chai')
-const {
-  formatTimeRemaining, formatTimeIn,
-  canSkip, canPostpone, formatKeyboardShortcut,
-  minutesRemaining, shouldShowNotificationTitle
-} = require('../app/utils/utils')
-const i18next = require('i18next')
-const path = require('path')
-const Backend = require('i18next-fs-backend')
-const sinon = require('sinon')
-
-chai.should()
+import { formatTimeRemaining, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle } from '../app/utils/utils'
+import { beforeAll, afterAll, vi } from 'vitest'
+import 'chai/register-should'
+import i18next from 'i18next'
+import { join } from 'path'
+import Backend from 'i18next-fs-backend'
 
 describe('Times formatters', function () {
-  before(function (done) {
-    i18next
-      .use(Backend)
-      .init({
-        lng: 'en',
-        fallbackLng: 'en',
-        debug: true,
-        backend: {
-          loadPath: path.join(__dirname, '/../app/locales/{{lng}}.json'),
-          jsonIndent: 2
-        }
-      }, function (err, t) {
-        if (err) {
-          console.log(err)
-          return done(err)
-        }
-        done()
-      })
+  beforeAll(async () => {
+    await i18next.use(Backend).init({
+      lng: 'en',
+      fallbackLng: 'en',
+      backend: {
+        loadPath: join(__dirname, '/../app/locales/{{lng}}.json'),
+        jsonIndent: 2
+      }
+    })
   })
 
   it('formats "remaining" milliseconds into correct format', function () {
-    formatTimeRemaining(800, i18next).should.equal('1 second remaining')
-    formatTimeRemaining(1000, i18next).should.equal('1 second remaining')
-    formatTimeRemaining(1001, i18next).should.equal('2 seconds remaining')
-    formatTimeRemaining(2000, i18next).should.equal('2 seconds remaining')
-    formatTimeRemaining(59001, i18next).should.equal('About 2 minutes remaining')
-    formatTimeRemaining(60001, i18next).should.equal('About 2 minutes remaining')
-    formatTimeRemaining(118001, i18next).should.equal('About 2 minutes remaining')
-    formatTimeRemaining(119001, i18next).should.equal('About 2 minutes remaining')
-    formatTimeRemaining(120000, i18next).should.equal('About 2 minutes remaining')
-    formatTimeRemaining(120001, i18next).should.equal('About 3 minutes remaining')
-    formatTimeRemaining(3480001, i18next).should.equal('About 59 minutes remaining')
-    formatTimeRemaining(3540001, i18next).should.equal('About 1 hour remaining')
-    formatTimeRemaining(3600000, i18next).should.equal('About 1 hour remaining')
-    formatTimeRemaining(3600001, i18next).should.equal('About 1 hour 1 minute remaining')
-    formatTimeRemaining(7080001, i18next).should.equal('About 1 hour 59 minutes remaining')
-    formatTimeRemaining(7080001, i18next).should.equal('About 1 hour 59 minutes remaining')
-    formatTimeRemaining(7180001, i18next).should.equal('About 2 hours remaining')
+    formatTimeRemaining(800, 'en', i18next).should.equal('1 second remaining')
+    formatTimeRemaining(1000, 'en', i18next).should.equal('1 second remaining')
+    formatTimeRemaining(1001, 'en', i18next).should.equal('1 second remaining')
+    formatTimeRemaining(2000, 'en', i18next).should.equal('2 seconds remaining')
+    formatTimeRemaining(59001, 'en', i18next).should.equal('59 seconds remaining')
+    formatTimeRemaining(60001, 'en', i18next).should.equal('1 minute remaining')
+    formatTimeRemaining(118001, 'en', i18next).should.equal('1 minute 58 seconds remaining')
+    formatTimeRemaining(119001, 'en', i18next).should.equal('1 minute 59 seconds remaining')
+    formatTimeRemaining(120000, 'en', i18next).should.equal('2 minutes remaining')
+    formatTimeRemaining(120001, 'en', i18next).should.equal('2 minutes remaining')
+    formatTimeRemaining(3480001, 'en', i18next).should.equal('58 minutes remaining')
+    formatTimeRemaining(3540001, 'en', i18next).should.equal('59 minutes remaining')
+    formatTimeRemaining(3600000, 'en', i18next).should.equal('1 hour remaining')
+    formatTimeRemaining(3600001, 'en', i18next).should.equal('1 hour remaining')
+    formatTimeRemaining(7080001, 'en', i18next).should.equal('1 hour 58 minutes remaining')
+    formatTimeRemaining(7180001, 'en', i18next).should.equal('1 hour 59 minutes 40 seconds remaining')
   })
 
   it('formats "in" milliseconds into correct format', function () {
-    formatTimeIn(800, i18next).should.equal('in 1 second')
-    formatTimeIn(1000, i18next).should.equal('in 1 second')
-    formatTimeIn(1001, i18next).should.equal('in 2 seconds')
-    formatTimeIn(2000, i18next).should.equal('in 2 seconds')
-    formatTimeIn(58001, i18next).should.equal('in 59 seconds')
-    formatTimeIn(59000, i18next).should.equal('in 59 seconds')
-    formatTimeIn(59001, i18next).should.equal('in about 2 minutes')
-    formatTimeIn(60001, i18next).should.equal('in about 2 minutes')
-    formatTimeIn(118001, i18next).should.equal('in about 2 minutes')
-    formatTimeIn(119001, i18next).should.equal('in about 2 minutes')
-    formatTimeIn(120001, i18next).should.equal('in about 3 minutes')
-    formatTimeIn(3480000, i18next).should.equal('in about 58 minutes')
-    formatTimeIn(3540001, i18next).should.equal('in about 1 hour')
-    formatTimeIn(3600001, i18next).should.equal('in about 1 hour 1 minute')
-    formatTimeIn(3660000, i18next).should.equal('in about 1 hour 1 minute')
-    formatTimeIn(3660001, i18next).should.equal('in about 1 hour 2 minutes')
-    formatTimeIn(7140000, i18next).should.equal('in about 1 hour 59 minutes')
-    formatTimeIn(7200000, i18next).should.equal('in about 2 hours')
-    formatTimeIn(7260000, i18next).should.equal('in about 2 hours 1 minute')
+    formatTimeIn(800, 'en', i18next).should.equal('in about 0 minutes')
+    formatTimeIn(58001, 'en', i18next).should.equal('in about 1 minute')
+    formatTimeIn(60001, 'en', i18next).should.equal('in about 1 minute')
+    formatTimeIn(118001, 'en', i18next).should.equal('in about 2 minutes')
+    formatTimeIn(119001, 'en', i18next).should.equal('in about 2 minutes')
+    formatTimeIn(120001, 'en', i18next).should.equal('in about 2 minutes')
+    formatTimeIn(3480000, 'en', i18next).should.equal('in about 58 minutes')
+    formatTimeIn(3540001, 'en', i18next).should.equal('in about 59 minutes')
+    formatTimeIn(3600001, 'en', i18next).should.equal('in about 1 hour')
+    formatTimeIn(3660000, 'en', i18next).should.equal('in about 1 hour 1 minute')
+    formatTimeIn(7140000, 'en', i18next).should.equal('in about 1 hour 59 minutes')
+    formatTimeIn(7200000, 'en', i18next).should.equal('in about 2 hours')
+    formatTimeIn(7260000, 'en', i18next).should.equal('in about 2 hours 1 minute')
   })
 })
 
 describe('canSkip and canPostpone', () => {
   // stubbing date
-  before(() => {
-    this.sandbox = sinon.createSandbox()
-    this.sandbox.stub(Date, 'now').returns(1537347700000)
+  beforeAll(() => {
+    vi.setSystemTime(1537347700000)
   })
 
-  after(() => {
-    this.sandbox.restore()
+  afterAll(() => {
+    vi.useRealTimers()
   })
 
   describe('canSkip', () => {
@@ -141,13 +118,16 @@ describe('canSkip and canPostpone', () => {
 
   describe('minutesRemaining', () => {
     it('one minute remaining', () => {
-      minutesRemaining(1000).should.equal(1)
+      minutesRemaining(60 * 1000).should.equal(1)
     })
-    it('less then one minute remaining', () => {
-      minutesRemaining(1).should.equal(1)
+    it('twenty seconds remaining', () => {
+      minutesRemaining(20 * 1000).should.equal(0)
+    })
+    it('forty seconds remaining', () => {
+      minutesRemaining(40 * 1000).should.equal(1)
     })
     it('ten minutes remaining', () => {
-      minutesRemaining(600000).should.equal(10)
+      minutesRemaining(600 * 1000).should.equal(10)
     })
   })
 

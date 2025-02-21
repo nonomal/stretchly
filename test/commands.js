@@ -1,7 +1,5 @@
-const chai = require('chai')
-const Command = require('../app/utils/commands')
-
-chai.should()
+import 'chai/register-should'
+import Command from '../app/utils/commands'
 
 describe('commands', () => {
   it('should parse a valid simple command', () => {

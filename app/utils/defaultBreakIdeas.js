@@ -128,11 +128,15 @@ module.exports = [
     enabled: true
   },
   {
-    data: ['Hand squeezes', 'Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process few times.'],
+    data: ['Hand squeezes', 'Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process a few times.'],
     enabled: true
   },
   {
     data: ['Slow Breathing', 'Emerging research suggests potential for use of controlled slow breathing techniques as a means of optimising physiological parameters that appear to be associated with health and longevity.'],
+    enabled: true
+  },
+  {
+    data: ['Imaginative visualization', 'Close your eyes and imagine yourself in a peaceful and calming place, such as a beach or a forest, focusing on the sights, sounds, and sensations of that environment.'],
     enabled: true
   }
 ]

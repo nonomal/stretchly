@@ -70,6 +70,8 @@ window.onload = (e) => {
       document.querySelector('#node').innerHTML = process.versions.node
       document.querySelector('#chrome').innerHTML = process.versions.chrome
       document.querySelector('#electron').innerHTML = process.versions.electron
+      document.querySelector('#platform').innerHTML = process.platform
+      document.querySelector('#windowsStore').innerHTML = process.windowsStore || false
     }
     setWindowHeight()
   })
@@ -185,6 +187,16 @@ window.onload = (e) => {
       document.querySelector('#language').onchange = (event) => {
         ipcRenderer.send('save-setting', 'language', event.target.value)
         htmlTranslate.translate()
+        document.querySelectorAll('input[type="range"]').forEach(range => {
+          const divisor = range.dataset.divisor
+          const output = range.closest('div').querySelector('output')
+          range.value = settings[range.name] / divisor
+          const unit = output.dataset.unit
+          output.innerHTML = formatUnitAndValue(unit, range.value)
+          document.querySelector('#longBreakEvery').closest('div').querySelector('output')
+            .innerHTML = i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+        })
+        htmlTranslate.translate() // sometimes few texts are not translated, so calling twice
         setWindowHeight()
       }
     }
@@ -288,21 +300,20 @@ window.onload = (e) => {
     const scrollHeight = document.querySelector('body').scrollHeight
     const availHeight = window.screen.availHeight
     let height = null
-    if (classes.contains('darwin')) {
-      if (scrollHeight + 32 > availHeight) {
-        height = availHeight
-      } else {
-        height = scrollHeight + 32
-      }
-    } else if (classes.contains('win32')) {
+    if (classes.contains('win32')) {
       if (scrollHeight + 40 > availHeight) {
         height = availHeight
       } else {
         height = scrollHeight + 40
       }
+    } else {
+      if (scrollHeight + 32 > availHeight) {
+        height = availHeight
+      } else {
+        height = scrollHeight + 32
+      }
     }
-    // linux is broken ;/
-    if (!!height) {
+    if (height) {
       remote.getCurrentWindow().setSize(bounds.width, height)
     }
   }

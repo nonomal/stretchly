@@ -13,7 +13,7 @@
     "indefinitely": "Sonsuza kadar",
     "resetBreaks": "Molaları sıfırla",
     "quitStretchly": "Stretchly'den çık",
-    "preferences": "Ayarlar",
+    "preferences": "Tercihler",
     "syncPreferences": "Ayarları Eşzamanla",
     "contributorPreferences": "Destekçi Ayarları",
     "cancel": "İptal",
@@ -48,7 +48,8 @@
       "enableSounds": "Sesleri etkinleştir",
       "sounds": "Sesler:",
       "transparentMode": "Saydamlığı ayarla",
-      "appearance": "Görünüm:"
+      "appearance": "Görünüm:",
+      "reverie": "Hayal"
     },
     "about": {
       "tagline": "Mola hatırlatıcı uygulama",
@@ -179,7 +180,9 @@
     "timeToBreakInTray": "Mola zamanı",
     "showTimeToBreakInTray": "Menü çubuğu simgesinde bir sonraki molaya kadar olan zamanı göster",
     "currentTimeInBreaks": "Geçerli saat",
-    "showCurrentTimeInBreaks": "Mola penceresinde geçerli yerel saati göster"
+    "showCurrentTimeInBreaks": "Mola penceresinde geçerli yerel saati göster",
+    "showTrayIcon": "Menü çubuğu simgesini göster",
+    "toShowTrayIcon": "Menü çubuğunda Stretchly simgesini göster"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -194,14 +197,8 @@
     "minutes_other": "{{count}} dakika",
     "hours_one": "{{count}} saat",
     "hours_other": "{{count}} saat",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) kaldı",
-    "aboutMinutesRemaining": "Yaklaşık $t(utils.minutes, {'count': {{minutes}} }) kaldı",
-    "aboutHoursRemaining": "Yaklaşık $t(utils.hours, {'count': {{hours}} }) kaldı",
-    "inAboutMinutes": "$t(utils.minutes, {'count': {{minutes}} }) içerisinde",
-    "inAboutHours": "$t(utils.hours, {'count': {{hours}} }) içerisinde",
-    "inAboutHoursMinutes": "$t(utils.hours, {'count': {{hours}} }), $t(utils.minutes, {'count': {{minutes}} }) içerisinde",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) içerisinde",
-    "aboutHoursMinutesRemaining": "Yaklaşık $t(utils.hours, {'count': {{hours}} }), $t(utils.minutes, {'count': {{minutes}} }) kaldı"
+    "remaining": "{{count}} kaldı",
+    "inAbout": "{{count}} içerisinde"
   },
   "statusMessages": {
     "paused": "Durduruldu",
@@ -328,6 +325,45 @@
     },
     "abj": {
       "text": "Dik durun ve bir gerginlik hissedene kadar aynı elinizi kullanarak başınızı yavaşça omzunuza doğru eğin."
+    },
+    "abm": {
+      "text": "Sandalyenizin kenarına oturun, gövdenizi bir tarafa doğru bükün ve 10-15 saniye öylece durun. Diğer tarafta tekrarlayın."
+    },
+    "abt": {
+      "text": "Bir kolunuzu dik tutun, ardından diğer kolunuzu kullanarak ilk kolunuzun dirseğini başınıza doğru hafifçe itin. 10-15 saniye boyunca tutun. Diğer kolunuzla tekrarlayın."
+    },
+    "abs": {
+      "text": "Duvara dönük durun, bir ayağınızı geriye ve diğer ayağınızı öne atın, ardından duvara doğru eğilin. Diğer bacağınızla tekrarlayın."
+    },
+    "abq": {
+      "text": "Bir duvarın karşısında durun ve ellerinizi duvara koyun, ardından birkaç şınav çekin."
+    },
+    "abr": {
+      "text": "Sandalyenizin kenarına oturun ve bir bacağınızı düz bir şekilde önünüze doğru uzatın, 10-15 saniye tutun. Diğer bacağınızla tekrarlayın."
+    },
+    "abu": {
+      "text": "Başınızı bir tarafa, sonra diğer tarafa eğin ve ardından hafifçe öne ve arkaya doğru eğin."
+    },
+    "abn": {
+      "text": "Ayağa kalkın ve bir ayağınızı sandalye veya basamaklı tabure gibi yakındaki bir nesnenin üzerine koyun. Dizinizi 10-15 saniye bükülü tutun. Diğer ayağınızla tekrarlayın."
+    },
+    "abo": {
+      "text": "Ayaklarınızı omuz genişliğinde açarak ayakta durun, vücudunuzu bir sandalyeye oturur gibi aşağı indirin, sonra tekrar ayağa kalkın. Birkaç kez tekrarlayın."
+    },
+    "abp": {
+      "text": "Sırtınızı ve ellerinizi duvara dayayın, ardından kollarınızı yavaşça yukarı ve aşağı hareket ettirin."
+    },
+    "abv": {
+      "text": "Bir kolunuzu göğsünüze doğru uzatın, diğer elinizle dirseğinizi tutun ve yavaşça göğsünüze doğru çekin. Diğer kolunuzla da tekrarlayın."
+    },
+    "abw": {
+      "text": "Ayağa kalkın, bir ayağınızı sandalye veya basamaklı tabure gibi yakındaki bir nesnenin üzerine koyun ve ayak parmaklarınıza dokunmak için eğilin. Diğer bacağınızla tekrarlayın."
+    },
+    "abx": {
+      "text": "Kapı aralığında durun ve bir kolunuzu kapı aralığının her iki tarafına yerleştirin, ardından göğsünüzde bir gerilme hissedene kadar hafifçe öne doğru eğilin."
+    },
+    "aby": {
+      "text": "Bir sandalyenin kenarına veya yere oturun ve ayak tabanlarınızı birleştirin, iç uyluklarınızı esnetmek için dirseklerinizle hafifçe aşağı doğru bastırın."
     }
   },
   "longBreakIdeas": {
@@ -433,10 +469,10 @@
     },
     "aax": {
       "title": "Kalp Atışı",
-      "text": " Zevk aldığınız her şeyi yaparak haftada dört veya beş kez 20 düz dakika boyunca nabzınızı dakikada 120 vuruşa yükseltin. Kalp atış hızınızı düzenli olarak yükseltmek, kardiyovasküler sağlığın iyileşmesine neden olur."
+      "text": "Zevk aldığınız şeyleri yaparak haftada dört veya beş kez 20 dakika boyunca nabzınızı dakikada 120 vuruşa yükseltin. Kalp atış hızınızı düzenli olarak yükseltmek, kardiyovasküler sağlığın iyileşmesine neden olur."
     },
     "aay": {
-      "title": "Merdivenleri kullanın ",
+      "title": "Merdivenleri kullanın",
       "text": "Araştırmalar, şiddetli fiziksel aktivite olarak kabul edilen merdiven çıkmanın, koşuya göre dakikada daha fazla kalori yaktığını göstermiştir."
     },
     "aba": {
@@ -466,6 +502,10 @@
     "abh": {
       "title": "Yavaş nefes alma",
       "text": "Gelişmekte olan araştırmalar, sağlık ve uzun ömür ile ilişkili gibi görünen fizyolojik parametreleri optimize etmenin bir yolu olarak kontrollü yavaş nefes alma tekniklerinin kullanım potansiyelini ortaya koymaktadır."
+    },
+    "abi": {
+      "title": "Hayali görselleştirme",
+      "text": "Gözlerinizi kapatın ve kendinizi plaj veya orman gibi huzurlu ve sakinleştirici bir yerde hayal edin, o ortamın görüntülerine, seslerine ve hislerine odaklanın."
     }
   }
 }

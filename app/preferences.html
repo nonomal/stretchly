@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/preferences.css">
   </head>
   <body>
-    <nav class="navigation" dir="ltr">
+    <nav class="navigation">
       <a href="#" class="active" data-section="settings">
         <div>
           <img src="images/preferences/settings.svg">
@@ -44,7 +44,7 @@
       </a>
     </nav>
     <div class="settings">
-      <div class="linux-hidden">
+      <div class="store-hidden">
         <input type="checkbox" value="openAtLogin" id="openAtLogin">
         <label data-i18next="preferences.settings.openAtLogin" for="openAtLogin"></label>
       </div>
@@ -69,7 +69,7 @@
         <input type="checkbox" value="naturalBreaks" id="monitorIdleTime">
         <label data-i18next="preferences.settings.monitorIdleTime" for="monitorIdleTime"></label>
       </div>
-      <div class="linux-hidden">
+      <div>
         <input type="checkbox" class="negative" value="monitorDnd" id="monitorDnd">
         <label data-i18next="preferences.settings.monitorDnd" for="monitorDnd"></label>
       </div>
@@ -83,15 +83,22 @@
             <!--Keep languages in the alphabet order-->
             <option value="ajp">اللهجة الأردنية</option>
             <option value="bg">Български</option>
+            <option value="be">Беларуская мова</option>
+            <option value="bn">বাংলা</option>
+            <option value="ca">Català</option>
             <option value="cs">Čeština</option>
             <option value="da">Dansk</option>
             <option value="de">Deutsch</option>
+            <option value="el">Ελληνικά</option>
             <option value="en">English</option>
             <option value="eo">Esperanto</option>
             <option value="es">Español</option>
+            <option value="et">Eesti keel</option>
             <option value="fa">فارسی</option>
             <option value="fi">Suomi</option>
+            <option value="fil">Wikang Filipino</option>
             <option value="fr">Français</option>
+            <option value="gl">Galego</option>
             <option value="gu">ગુજરાતી</option>
             <option value="he">עברית</option>
             <option value="hi">हिन्दी</option>
@@ -115,10 +122,12 @@
             <option value="si">සිංහල</option>
             <option value="sk">Slovenčina</option>
             <option value="sl">Slovenščina</option>
+            <option value="sr">српски језик</option>
             <option value="sv">Svenska</option>
             <option value="th">ภาษาไทย</option>
             <option value="tr">Türkçe</option>
             <option value="uk">Українська</option>
+            <option value="vi">Tiếng Việt</option>
             <option value="zh-CN">简体中文</option>
             <option value="zh-TW">正體中文</option>
           </select>
@@ -316,6 +325,11 @@
         <label data-i18next="preferences.theme.ticToc" for="ticToc"></label>
         <img src="images/preferences/speaker.png" data-has-dark-version alt="Play sound">
       </div>
+      <div class="sounds">
+        <input type="radio" value="reverie" name="audio" id="reverie">
+        <label data-i18next="preferences.theme.reverie" for="reverie"></label>
+        <img src="images/preferences/speaker.png" data-has-dark-version alt="Play sound">
+      </div>
       <div>
         <hr>
       </div>
@@ -375,9 +389,11 @@
             settingsFile: <a href="" class="file" id="settingsfile"></a>
             <br/>
             logsFile:  <a href="" class="file" id="logsfile"></a>
-            <br/>Node.js: <span id="node"></span>
+            <br/>Node.js: <span id="node"></span>,
             Chromium: <span id="chrome"></span>,
             Electron: <span id="electron"></span>
+            <br/>OS: <span id="platform"></span><span class="linux-hidden darwin-hidden">,
+              Windows Store: <span id="windowsStore"></span></span>
           </p>
           <p>
             <button>copy to clipboard</button>

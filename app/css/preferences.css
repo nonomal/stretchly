@@ -161,14 +161,14 @@ body[dir=rtl] .theme > :nth-child(10) {
   text-align: left
 }
 
-.theme > :nth-child(16) {
+.theme > :nth-child(17) {
   grid-column: 1/2;
   grid-row: 14/17;
   padding: 0 16px;
   text-align: right;
 }
 
-body[dir=rtl] .theme > :nth-child(16) {
+body[dir=rtl] .theme > :nth-child(17) {
   text-align: left
 }
 
@@ -256,6 +256,11 @@ body[dir=rtl] .theme > :nth-child(16) {
   padding-left: 15px;
 }
 
+body[dir=rtl] .sounds > img {
+  padding-left: 0;
+  padding-right: 15px;
+}
+
 .about {
   display: grid;
   font-size: 13px;
@@ -305,7 +310,7 @@ body[dir=rtl] .about > :nth-child(1) > div > span {
     'Noto Sans CJK KR Light',
     'Noto Sans Devanagari Light',
     'Noto Sans Gujarati Light', 'Noto Sans Gurmukhi Light',
-    'Noto Sans JP Light', 'Noto Sans Hebrew Light'; 
+    'Noto Sans JP Light', 'Noto Sans Hebrew Light';
   font-size: 20px;
   line-height: 30px;
 }

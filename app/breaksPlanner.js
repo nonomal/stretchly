@@ -3,7 +3,7 @@ const EventEmitter = require('events')
 const NaturalBreaksManager = require('./utils/naturalBreaksManager')
 const DndManager = require('./utils/dndManager')
 const AppExclusionsManager = require('./utils/appExclusionsManager')
-const log = require('electron-log')
+const log = require('electron-log/main')
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -269,6 +269,23 @@ class BreaksPlanner extends EventEmitter {
         this.reset()
       }
     }
+  }
+
+  get timeToNextBreak () {
+    if (this.scheduler.reference === 'startMicrobreak' || this.scheduler.reference === 'startBreak') {
+      return this.scheduler.timeLeft
+    }
+    if (this.scheduler.reference === 'startBreakNotification') {
+      return this.scheduler.timeLeft + (this.settings.get('breakNotification')
+        ? this.settings.get('breakNotificationInterval')
+        : 0)
+    }
+    if (this.scheduler.reference === 'startMicrobreakNotification') {
+      return this.scheduler.timeLeft + (this.settings.get('microbreakNotification')
+        ? this.settings.get('microbreakNotificationInterval')
+        : 0)
+    }
+    return null
   }
 }
 

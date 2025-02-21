@@ -152,7 +152,25 @@
     "2": "Tredje Skærm",
     "1": "Anden Skærm",
     "4": "Femte skærm",
-    "opacityTheme": "Tema gennemsigtighed:"
+    "opacityTheme": "Tema gennemsigtighed:",
+    "showBreaksAsRegularWindowsInfo": "Hvis slået til vil Pause vinduer blive fokusserbare, de vil ikke være \"Altid øverst\" længere og de vil også vises i taskbaren.",
+    "showBreaksAsRegularWindowsTitle": "Funger som almindeligt vindue:",
+    "screen": "Monitorer for Pauser:",
+    "opacity": "Transperens:",
+    "opacityInfo": "Hvor solidt skal pausevinduet være?",
+    "breakWindowSizeInfo": "Hvor stor en procentdel af skærmbilledet skal pausevinduet dække?",
+    "breakWindowWidth": "Bredde:",
+    "breakWindowSize": "Pause vinduets størrelse",
+    "showBreaksAsRegularWindows": "Vis pauser som almindelige vinduer",
+    "breakWindowHeight": "Højde:",
+    "screenInfo": "Når pauser på alle skærme er slået fra, kan du vælge hvilken skærm de skal vises på.",
+    "showOnMonitor": "Vis Pauser på",
+    "primary": "Primære skærm",
+    "cursor": "Følg cursoren",
+    "showTimeToBreakInTray": "Vis tid til næste pause i menubar ikon",
+    "timeToBreakInTray": "Tid til en pause",
+    "currentTimeInBreaks": "Aktuel tid",
+    "showCurrentTimeInBreaks": "Vis aktuel lokal tid i pause vindue"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -167,14 +185,8 @@
     "minutes_other": "{{count}} minutter",
     "hours_one": "{{count}} time",
     "hours_other": "{{count}} timer",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) tilbage",
-    "aboutMinutesRemaining": "Omkring $t(utils.minutes, {'count': {{minutes}} }) tilbage",
-    "aboutHoursRemaining": "Omkring $t(utils.hours, {'count': {{hours}} }) tilbage",
-    "aboutHoursMinutesRemaining": "Omkring $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) tilbage",
-    "inSeconds": "om $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "omkring $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "omkring $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "omkring $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "remaining": "{{count}} tilbage",
+    "inAbout": "omkring {{count}}"
   },
   "process": {
     "newVersionAvailable": "Ny version er tilgængelig!"
@@ -194,6 +206,51 @@
     "nextMiniBreak": "Næste Mini Pause",
     "afterMiniBreak_one": "efter {{count}} Mini pause",
     "afterMiniBreak_other": "efter {{count}} Mini pause",
-    "resuming": "Fortsæt"
+    "resuming": "Fortsæt",
+    "appExclusion": "App undtagelses regel"
+  },
+  "miniBreakIdeas": {
+    "aab": {
+      "text": "Kig langsomt helt til venstre og til højre."
+    },
+    "aac": {
+      "text": "Kig langsomt op og ned."
+    },
+    "aaj": {
+      "text": "Tip dit hoved langsomt til siden og hold det der i 5-10 sekunder."
+    },
+    "aan": {
+      "text": "Tag et øjeblik og smil over du er i live."
+    },
+    "aaf": {
+      "text": "Stræk dine ben."
+    },
+    "aak": {
+      "text": "Rejs dig op og stræk ud."
+    },
+    "aal": {
+      "text": "Fokuser på et objekt der er mindst 20 meter væk."
+    },
+    "aaa": {
+      "text": "Tag et glas vand."
+    },
+    "aad": {
+      "text": "Luk dine øjne og tag et par dybe vejrtrækninger."
+    },
+    "aah": {
+      "text": "Sidder du med en god kropsholdning?"
+    },
+    "aae": {
+      "text": "Luk dine øjne og slap af."
+    },
+    "aag": {
+      "text": "Stræk dine arme."
+    },
+    "aai": {
+      "text": "Drej dit hoved langsomt til siden og hold det der i 10 sekunder."
+    },
+    "aam": {
+      "text": "Tag et øjeblik til at tænke på noget du er taknemlig for."
+    }
   }
 }

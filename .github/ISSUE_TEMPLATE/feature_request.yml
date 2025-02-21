@@ -13,7 +13,7 @@ body:
     label:       Version
     description: We only support the latest version. Find your version number at `Preferences` -  `About`.
     options:
-    - label:     I'm using version 1.10.0
+    - label:     I'm using version 1.17.2
       required:  false
 - type:          checkboxes
   id:            open-requests
@@ -22,6 +22,14 @@ body:
     description: Please check [Existing requests](https://github.com/hovancik/stretchly/issues?q=is%3Aissue) as it may containt your idea already.
     options:
     - label:     I've checked Existing requests
+      required:  true
+- type:          checkboxes
+  id:            advanced-preferences
+  attributes:
+    label:       Advanced Preferences
+    description: Please check [Advanced Preferences](https://github.com/hovancik/stretchly#advanced-preferences) as it may containt your idea already.
+    options:
+    - label:     I've checked Advanced Preferences
       required:  true
 - type:          dropdown
   attributes:

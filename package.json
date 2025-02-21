@@ -1,23 +1,25 @@
 {
   "name": "Stretchly",
-  "version": "1.10.0",
+  "version": "1.17.2",
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {
-    "node": "16.14.2"
+    "node": "20.18.1"
   },
   "scripts": {
-    "start": "electron ./app",
-    "dev": "cross-env NODE_ENV=development electron ./app --enable-logging --remote-debugging-port=9222",
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron . --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9222",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder build --dir",
-    "dist": "electron-builder build --x64 --ia32",
-    "test": "mocha test",
-    "test-single": "mocha $1",
-    "tdd": "mocha --watch test",
-    "lint": "./node_modules/.bin/standard",
+    "dist": "electron-builder build",
+    "test": "vitest run",
+    "test-single": "vitest run $1",
+    "coverage": "vitest run --coverage",
+    "tdd": "vitest --watch test",
+    "lint": "cross-env ./node_modules/.bin/standard",
     "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "postpublish": "pinst --enable",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -84,10 +86,24 @@
       ],
       "asarUnpack": "node_modules/macos-notification-state/**"
     },
+    "rpm": {
+      "fpm": [
+        "--rpm-rpmbuild-define",
+        "_build_id_links none"
+      ]
+    },
+    "appx": {
+      "identityName": "33881JanHovancik.stretchly",
+      "publisher": "CN=35004EDA-CCDD-4304-A014-784D754E043F",
+      "publisherDisplayName": "Jan Hovancik",
+      "applicationId": "Stretchly",
+      "displayName": "Stretchly"
+    },
     "win": {
       "target": [
         "nsis",
-        "7z"
+        "7z",
+        "appx"
       ],
       "asarUnpack": [
         "node_modules/windows-quiet-hours/**",
@@ -115,37 +131,35 @@
       "Audio",
       "fetch",
       "Notification",
-      "alert"
-    ],
-    "ignore": [
-      "sun.js"
+      "alert",
+      "__electronLog"
     ]
   },
   "devDependencies": {
-    "chai": "^4.3.6",
-    "chai-as-promised": "^7.1.1",
+    "@vitest/coverage-istanbul": "^3.0.2",
     "cross-env": "^7.0.3",
-    "electron": "^19.0.9",
-    "electron-builder": "^23.1.0",
-    "husky": "^8.0.1",
-    "mocha": "^10.0.0",
-    "rimraf": "^3.0.2",
-    "sinon": "^14.0.0",
-    "spectron": "^19.0.0",
-    "standard": "^17.0.0"
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8",
+    "husky": "^9.1.7",
+    "rimraf": "^6.0.1",
+    "standard": "^17.1.2",
+    "vitest": "^3.0.2"
   },
   "dependencies": {
-    "@electron/remote": "^2.0.8",
-    "@meetfranz/electron-notification-state": "^1.0.0",
-    "electron-log": "^4.4.8",
-    "electron-store": "^8.0.2",
-    "i18next": "^21.8.14",
-    "i18next-fs-backend": "^1.1.4",
-    "luxon": "^3.0.1",
+    "@electron/remote": "^2.1.2",
+    "auto-launch": "^6.0.0-rc1",
+    "dbus-final": "github:Jelmerro/dbus-final",
+    "electron-log": "^5.2.4",
+    "electron-store": "^8.2.0",
+    "humanize-duration": "^3.32.1",
+    "i18next": "^24.2.1",
+    "i18next-fs-backend": "^2.6.0",
+    "luxon": "^3.5.0",
     "meeussunmoon": "^3.0.3",
-    "ps-list": "7.2.0",
-    "rtl-detect": "^1.0.4",
-    "semver": "^7.3.7",
-    "windows-focus-assist": "^1.3.0"
+    "ps-list": "7.2",
+    "rtl-detect": "^1.1.2",
+    "semver": "^7.6.3",
+    "windows-focus-assist": "^1.4.0",
+    "windows-quiet-hours": "github:hovancik/windows-quiet-hours#fix-LPTSTR"
   }
 }

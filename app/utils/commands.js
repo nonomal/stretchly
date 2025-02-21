@@ -1,5 +1,5 @@
 const { UntilMorning } = require('./untilMorning')
-const log = require('electron-log')
+const log = require('electron-log/main')
 
 const allOptions = {
   title: {
@@ -39,7 +39,10 @@ const allCommands = {
     description: 'Show this help message'
   },
   version: {
-    description: 'Show current stretchly version'
+    description: 'Show current Stretchly version'
+  },
+  logs: {
+    description: 'Show location of logs file'
   },
   reset: {
     description: 'Reset breaks'
@@ -61,6 +64,9 @@ const allCommands = {
   long: {
     description: 'Skip to the Long Break, customize it',
     options: [allOptions.text, allOptions.title, allOptions.noskip, allOptions.wait]
+  },
+  preferences: {
+    description: 'Open Preferences window'
   }
 }
 
@@ -95,6 +101,10 @@ const allExamples = [{
 {
   cmd: 'stretchly long -w 20m -T "Stretch up!"',
   description: 'Wait 20 minutes, then start a long break with the title set to "Stretch up!"'
+},
+{
+  cmd: 'stretchly preferences',
+  description: 'Open Preferences window'
 }]
 
 // Parse cmd line, check if valid and put variables in a dedicated object
@@ -172,6 +182,10 @@ class Command {
         this.ver()
         break
 
+      case 'logs':
+        this.logs()
+        break
+
       default:
         if (this.hasSupportedCommand) {
           log.info(`Stretchly${this.isFirstInstance ? '' : ' 2'}: forwarding command '${this.command}' to the main instance`)
@@ -218,6 +232,10 @@ class Command {
 
   ver () {
     console.log(`Stretchly version ${this.version}`)
+  }
+
+  logs () {
+    console.log(log.transports.file.getFile().path)
   }
 
   cmdHelp () {

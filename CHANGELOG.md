@@ -6,6 +6,138 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Fixed
+- hide close/minimize actions on Break window on macOS
+
+## [1.17.2] - 2025-1-19
+### Fixed
+- Linux DND detection
+- improve macOS DND detection
+- debug info when from Windows Store
+
+## [1.17.1] - 2024-12-25
+### Fixed
+- Ubuntu Unity DND detection
+- macOS app start
+
+## [1.17.0] - 2024-12-24
+### Added
+- Bengali, Catalan, Greek and Serbian translations
+- it is not possible to close app during break that is in strict mode
+- `logs` command line option to show location of logs
+- advanced option to make break windows' background blurred (macOS)
+
+### Fixed
+- error when end break shortcut is not set
+- time in tray shows the correct number (and matches the tooltip value)
+
+### Changed
+- improved break window loading
+- improve DND detection for Linux
+- updated many translations
+- better icons for "Show time in tray"
+- `showBreakActionsInStrictMode` migrated to `showTrayMenuInStrictMode`
+
+## [1.16.0] - 2024-08-11
+### Added
+- Estonia and Belarus translations
+- advanced option to show break options (Skip, Pause, Reset) in Strict mode
+- autostart option for Linux
+- keyboard shortcuts for pause breaks for specific durations
+
+### Changed
+- updated many translations
+- disable skipping to next break from tray when in strict mode
+
+### Fixed
+- transparency issues on Windows 10
+- Schedule and Menu options not being updated after change of language
+- multiple RTL UI issues
+- RPM installer conflicts with other Electron apps
+- improve break window loading to improve blank window issues
+
+## [1.15.1] - 2023-11-19
+### Fixed
+- improve DND monitoring memory usage
+
+### Changed
+- hide autostart option for Windows Store build as it doesn't work
+
+## [1.15.0] - 2023-11-11
+### Added
+- new end-of-the-break sound
+- both left and right click on tray opens menu (Windows)
+- double click on tray opens Preferences (Windows)
+- adds Vietnamese translations
+- reset breaks shortcut (advanced option)
+- skip to the next break shortcut (advanced option)
+- respect Do Not Disturb on Linux distros (KDE, XFCE, GNOME)
+
+## Changed
+- updated many translations
+
+### Fixed
+- improve Do Not Disturb detection
+- start at login for Windows Store version (not sure whether successfully)
+
+## [1.14.1] - 2023-06-04
+### Added
+- advanced option to not show menubar (tray) icon
+
+### Fixed
+- break progress bar overflowing on tall screens
+- dock icon staying after break on macOS
+
+## Changed
+- updated many translations
+
+## [1.14.0] - 2023-04-15
+### Added
+- new break ideas
+- ability to open Preferences window from command line
+- advanced option to set different sounds for Mini and Long Breaks
+- advanced option to set different color theme for Mini and Long Breaks
+
+## Fixed
+- error when checking for new version fails
+- VoiceOver glitch on mac
+- notifications getting stacked in Notification center (macOS, Linux)
+- notifications preventing Gnome DE from sleeping
+
+## Changed
+- improved linux Preferences positioning
+- updated many translations
+
+## [1.13.1] - 2022-12-23
+## Fixed
+- migration script for new installs
+
+## [1.13.0] - 2022-12-23
+### Added
+- Galician translations
+- Filipino translations
+
+## Fixed
+- time translations for Chinese
+- tray icon popup on Linux
+
+## Changed
+- updated many translations
+- merged `pauseBreaksShortcut` and `resumeBreaksShortcut` to `pauseBreaksToggleShortcut`
+
+## [1.12.0] - 2022-9-24
+### Added
+- support for Flatpak
+
+### Changed
+- updated many translations
+- remaining times are more exact
+- only update tray when needed
+
+### Removed
+- no Linux ARM32 builds, as CI does not support them anymore
+
+## [1.11.0] - 2022-8-7
 ### Added
 - Japanese translations
 - break ideas are translatable
@@ -13,6 +145,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - updated many translations
+
+### Removed
+- no Linux 32 builds, as Electron does not support them anymore
 
 ### Fixed
 - crashing when skipping to break and time to break in tray
@@ -653,7 +788,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.10.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.17.2...HEAD
+[1.17.2]: https://github.com/hovancik/stretchly/compare/v1.17.1...v1.17.2
+[1.17.1]: https://github.com/hovancik/stretchly/compare/v1.17.0...v1.17.1
+[1.17.0]: https://github.com/hovancik/stretchly/compare/v1.16.0...v1.17.0
+[1.16.0]: https://github.com/hovancik/stretchly/compare/v1.15.1...v1.16.0
+[1.15.1]: https://github.com/hovancik/stretchly/compare/v1.15.0...v1.15.1
+[1.15.0]: https://github.com/hovancik/stretchly/compare/v1.14.1...v1.15.0
+[1.14.1]: https://github.com/hovancik/stretchly/compare/v1.14.0...v1.14.1
+[1.14.0]: https://github.com/hovancik/stretchly/compare/v1.13.1...v1.14.0
+[1.13.1]: https://github.com/hovancik/stretchly/compare/v1.13.0...v1.13.1
+[1.13.0]: https://github.com/hovancik/stretchly/compare/v1.12.0...v1.13.0
+[1.12.0]: https://github.com/hovancik/stretchly/compare/v1.11.0...v1.12.0
+[1.11.0]: https://github.com/hovancik/stretchly/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/hovancik/stretchly/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/hovancik/stretchly/compare/v1.8.1...v1.9.0
 [1.8.1]: https://github.com/hovancik/stretchly/compare/v1.8.0...v1.8.1

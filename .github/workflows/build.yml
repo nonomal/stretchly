@@ -1,4 +1,4 @@
-name: macOS/Windows build
+name: Packages build
 
 on:
   push:
@@ -11,13 +11,23 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, windows-latest]
-
+        os: [macos-latest, windows-latest, ubuntu-latest]
+      fail-fast: false
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - name: run on mac
+      if: matrix.os == 'macos-latest'
+      run: sudo xcode-select -s /Library/Developer/CommandLineTools      
+    - name: run on linux
+      if: matrix.os == 'ubuntu-latest'
+      run: sudo apt-get install libarchive-tools
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
       with:
-        node-version: '16.14.2'
+        python-version: '3.12'
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '20.18.1'
+    - run: pip install setuptools
     - run: npm install npm -g
     - run: npm install
     - run: node_modules/.bin/electron-builder build
