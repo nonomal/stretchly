@@ -786,6 +786,8 @@ function startMicrobreak () {
         if (showBreaksAsRegularWindows) {
           microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
         } else {
+          microbreakWinLocal.setMinimizable(false)
+          microbreakWinLocal.setClosable(false)
           microbreakWinLocal.setKiosk(settings.get('fullscreen'))
         }
       }
@@ -934,6 +936,8 @@ function startBreak () {
         if (showBreaksAsRegularWindows) {
           breakWinLocal.setFullScreen(settings.get('fullscreen'))
         } else {
+          breakWinLocal.setMinimizable(false)
+          breakWinLocal.setClosable(false)
           breakWinLocal.setKiosk(settings.get('fullscreen'))
         }
       }
